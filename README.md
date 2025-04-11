@@ -25,28 +25,17 @@ A detailed architectural diagram is available in the  file.
 - **Boto3**: AWS SDK for Python.
 - **CloudWatch**: for logging and monitoring.
 
+
 ## Project Structure
-serverless-crud-api/
-├── README.md             # Project overview & instructions
-├── lambda_function.py    # Main Lambda function implementing CRUD operations
-├── custom_encoder.py     # Custom JSON encoder for DynamoDB Decimal types
-├── docs/
-│    ├── crud-api-architectural-diagram.png    # AWS architecture diagram
-│    ├── crud-api-architectural-diagram.pdf    # AWS architecture diagram
-│    └── serverless-api-prod-oas30-postman.yaml               # API Gateway OpenAPI export
-└── config/
-└── deployment_instructions.txt       # Additional deployment notes
-
-
 <pre>
 ```plaintext
-serverless-crud-api/
+serverless-crud-api-python/
 ├── README.md              # Project overview & instructions
 ├── lambda_function.py     # Main Lambda function implementing CRUD operations
 ├── custom_encoder.py      # Custom JSON encoder for DynamoDB Decimal types
 ├── docs/
-│   ├── crud-api-architectural-diagram.png  # AWS architecture diagram
-│   ├── crud-api-architectural-diagram.pdf  # AWS architecture diagram
+│   ├── crud-api-architectural-diagram.png      # AWS architecture diagram
+│   ├── crud-api-architectural-diagram.pdf      # AWS architecture diagram
 │   └── serverless-api-prod-oas30-postman.yaml  # API Gateway OpenAPI export
 └── config/
     └── deployment_instructions.txt         # Additional deployment notes
@@ -67,6 +56,8 @@ serverless-crud-api/
    
 
    # Lambda handler function that routes incoming requests based on HTTP method and path.
+   <pre>
+```plaintext
    def lambda_handler(event, context):
        logger.info(event)
        htttpMethod = event['httpMethod']
@@ -94,6 +85,9 @@ serverless-crud-api/
        else:
            response = buildResponse(404, 'Not Found')
        return response
+```
+</pre>
+
 
 
 
