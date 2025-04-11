@@ -15,7 +15,7 @@ The architecture consists of:
 - **DynamoDB**: A NoSQL database used for storing product information.
 - **IAM Role**: Grants the necessary permissions to Lambda to interact with DynamoDB and CloudWatch.
 
-A detailed architectural diagram is available in the  file.
+A detailed architectural diagram is available in the [`docs/crud-api-architectural-diagram.png`](docs/crud-api-architectural-diagram.png) file.
 
 ## Technologies Used
 - **AWS Lambda**: for serverless function execution.
