@@ -38,6 +38,22 @@ serverless-crud-api/
 └── deployment_instructions.txt       # Additional deployment notes
 
 
+<pre>
+```plaintext
+serverless-crud-api/
+├── README.md              # Project overview & instructions
+├── lambda_function.py     # Main Lambda function implementing CRUD operations
+├── custom_encoder.py      # Custom JSON encoder for DynamoDB Decimal types
+├── docs/
+│   ├── crud-api-architectural-diagram.png  # AWS architecture diagram
+│   ├── crud-api-architectural-diagram.pdf  # AWS architecture diagram
+│   └── serverless-api-prod-oas30-postman.yaml  # API Gateway OpenAPI export
+└── config/
+    └── deployment_instructions.txt         # Additional deployment notes
+```
+</pre>
+
+
 
 ## How It Works
 1. **Lambda Function Code**  
