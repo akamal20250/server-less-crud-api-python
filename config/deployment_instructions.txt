@@ -1,0 +1,31 @@
+ How to Deploy and Run
+
+Prerequisites
+	•	An AWS account with permissions to create Lambda functions, API Gateway APIs, and DynamoDB tables.
+	•	AWS CLI installed and configured (optional for automated deployments).
+	•	Python 3.13 (or compatible version) installed locally for testing.
+
+Deployment Steps
+	1.	Setup AWS Resources:
+	•	DynamoDB Table: Create a table named product-inventory with productId as the partition key.
+	•	IAM Role: Create a role (serverless-api-role) with permissions for CloudWatch and DynamoDB, and assign it to your Lambda function.
+	•	API Gateway: Create a REST API with resources /health, /product, and /products, and configure each method (GET, POST, PATCH, DELETE) with Lambda proxy integration.
+	
+    2.	Deploy the Lambda Function:
+	•	In the AWS Lambda console, create or update the function with the provided code files (lambda_function.py and custom_encoder.py).
+	•	Set the memory and timeout configurations as required.
+	
+    3.	Configure API Gateway:
+	•	Link your Lambda function to the relevant API Gateway resources.
+	•	Enable CORS on the resources.
+	•	Deploy your API to a stage (e.g., prod).
+	
+    4.	Testing:
+	•	Use Postman to test the endpoints, for example:
+	•	GET /health: Check API health.
+	•	POST /product: Add a new product (pass JSON body as detailed above).
+	•	GET /product or /products: Retrieve single or multiple products.
+	•	Monitor CloudWatch logs for any runtime errors or exceptions.
+
+Future Improvements
+	•	Convert the resource setup to Infrastructure as Code using AWS CloudFormation or the Serverless Framework.
