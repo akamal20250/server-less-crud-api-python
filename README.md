@@ -29,7 +29,7 @@ A detailed architectural diagram is available in the [`docs/crud-api-architectur
 ## Project Structure
 <pre>
 ```plaintext
-serverless-crud-api-python/
+serverless-CRUD-api-python/
 ├── README.md              # Project overview & instructions
 ├── lambda_function.py     # Main Lambda function implementing CRUD operations
 ├── custom_encoder.py      # Custom JSON encoder for DynamoDB Decimal types
